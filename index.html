@@ -1,113 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For My Gundu 💖</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For My Gundu 💖</title>
 
-  <!-- Romantic Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+*{
+  box-sizing:border-box;
+  font-family:'Segoe UI', sans-serif;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
+body{
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(135deg,#ffb6c1,#ffe4e1);
+  overflow-x:hidden;
+}
 
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
+/* COMMON */
+.page{
+  text-align:center;
+  padding:24px;
+  max-width:720px;
+  margin:auto;
+  animation:fadeIn 1.5s ease;
+}
 
-    .page {
-      text-align: center;
-      padding: 20px;
-      max-width: 90%;
-      animation: fadeIn 1.5s ease;
-    }
+.hidden{display:none;}
 
-    h1 {
-      font-size: 26px;
-      color: #b30059;
-      margin-bottom: 30px;
-    }
+h1{
+  color:#b30059;
+  font-size:26px;
+  line-height:1.4;
+}
 
-    button {
-      padding: 14px 28px;
-      font-size: 18px;
-      border-radius: 30px;
-      border: none;
-      cursor: pointer;
-      margin: 10px;
-    }
+button{
+  padding:14px 30px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  margin:12px;
+}
 
-    #yesBtn {
-      background: #ff4081;
-      color: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+/* YES */
+#yesBtn{
+  background:#ff4081;
+  color:white;
+  box-shadow:0 6px 16px rgba(0,0,0,.25);
+}
 
-    #noBtn {
-      background: #ddd;
-      color: #444;
-      position: absolute;
-    }
+/* NO */
+#noBtn{
+  background:#eee;
+  color:#444;
+  position:absolute;
+}
 
-    .hidden {
-      display: none;
-    }
+/* LETTER */
+.letter{
+  font-size:17px;
+  color:#5a0033;
+  line-height:1.9;
+  animation:fadeIn 2s ease;
+}
 
-    .letter {
-      font-size: 17px;
-      color: #5a0033;
-      line-height: 1.8;
-      animation: fadeIn 2s ease;
-    }
+.word-art{
+  margin:28px 0;
+  font-size:28px;
+  font-weight:bold;
+  background:linear-gradient(90deg,#ff4d6d,#c9184a);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-    .word-art {
-      font-family: 'Great Vibes', cursive;
-      font-size: 42px;
-      color: #b30059;
-      text-shadow: 0 2px 6px rgba(255, 0, 102, 0.4);
-      margin: 15px 0;
-    }
+.signature{
+  margin-top:24px;
+  font-size:18px;
+  font-weight:bold;
+}
 
-    .signature {
-      font-family: 'Dancing Script', cursive;
-      font-size: 26px;
-      color: #800040;
-      margin-top: 30px;
-    }
+/* HEARTS */
+.hearts span{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  animation:floatUp 6s linear infinite;
+  opacity:.6;
+}
 
-    .signature b {
-      font-size: 32px;
-      display: block;
-      margin-top: 10px;
-    }
-
-    .hearts span {
-      position: absolute;
-      bottom: -20px;
-      font-size: 20px;
-      animation: floatUp 6s linear infinite;
-      opacity: 0.6;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes floatUp {
-      from { transform: translateY(0); opacity: 0.6; }
-      to { transform: translateY(-100vh); opacity: 0; }
-    }
-  </style>
+/* ANIMATIONS */
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes floatUp{
+  from{transform:translateY(0);opacity:.6;}
+  to{transform:translateY(-120vh);opacity:0;}
+}
+</style>
 </head>
 
 <body>
@@ -127,7 +119,9 @@
 
 <!-- PAGE 2 -->
 <div id="page2" class="page hidden">
-  <audio autoplay loop>
+
+  <!-- MUSIC (plays after YES) -->
+  <audio id="bgm" loop>
     <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6b27c8e85c.mp3" type="audio/mpeg">
   </audio>
 
@@ -135,16 +129,18 @@
     Hey Gundu / Thakkali 💖<br><br>
 
     Nee cute-aa irukradhukku mattum illa…<br>
-    Nee bold, strong, brave<br>
+    nee bold, strong, brave<br>
     and romba fun-aa irukradhunaala<br>
-    naa unna love panren 🫶<br><br>
+    naa unna romba romba love panren 🫶<br><br>
 
-    Nee sirichaa – en stress poidum<br>
-    Nee silent-aa irundhaa en manasu kalangidum<br><br>
-    Unna Sapda vachu alagu paakradhu dhan enakku romba pudikkum<br><br>
+    Nee sirichaa – en stress ellam poidum<br>
+    Nee silent-aa irundhaa – en manasu konjam kalangidum<br><br>
+
+    Unna sapda vachu alagu paakradhu dhan<br>
+    enakku romba pidicha oru sandhosam 🤍<br><br>
 
     Idly Sambar madhiri…<br>
-    rendu peru thaniya nalla iruppom<br>
+    rendu peru thaniya nalla iruppom,<br>
     aanaa serndhaa dhaan complete ❤️<br><br>
 
     Kusu Gundu jokes,<br>
@@ -154,15 +150,16 @@
     ellame nee dhaan 🤍<br><br>
 
     Indha Valentine mattum illa…<br>
-    every ordinary day-layum<br>
+    every ordinary day-layum,<br>
     unna sandhosama vachaa dhaan<br>
-    enakku win 💪❤️<br><br>
+    enakku real-aana win 💪❤️<br><br>
 
-    Namakku win-win<br><br>
+    Namakku always win-win 🤍<br><br>
 
     Will you be mine…<br>
     not just today,<br>
-    but always? As Salai Adhithai Keshava Moorthy?<br><br>
+    but always?<br>
+    As <b>Salai Adhithai Keshava Moorthy</b>? 💍<br><br>
 
     <div class="word-art">
       Salai Adhithai 🤍
@@ -188,29 +185,37 @@
 </div>
 
 <script>
-  const noBtn = document.getElementById("noBtn");
-  const yesBtn = document.getElementById("yesBtn");
-  const page1 = document.getElementById("page1");
-  const page2 = document.getElementById("page2");
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const page1 = document.getElementById("page1");
+const page2 = document.getElementById("page2");
+const bgm = document.getElementById("bgm");
 
-  function moveNoButton() {
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
+function moveNo(){
+  const x = Math.random() * (window.innerWidth - 120);
+  const y = Math.random() * (window.innerHeight - 80);
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
 
-    const texts = ["Ayyayo 😜", "Try pannadha 😏", "No option illa 😌", "Novvv enna vutruuu naaa 😌"];
-    noBtn.innerText = texts[Math.floor(Math.random() * texts.length)];
-  }
+  const texts = [
+    "Ayyayo 😜",
+    "No illa 😌",
+    "Try pannadha 😏",
+    "Novv Enna vutruuu naa 🏃‍♂️",
+    "Thambi keela YES thodu pa 😜"
+  ];
+  noBtn.innerText = texts[Math.floor(Math.random()*texts.length)];
+}
 
-  noBtn.addEventListener("mouseover", moveNoButton);
-  noBtn.addEventListener("touchstart", moveNoButton);
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
 
-  yesBtn.onclick = () => {
-    page1.classList.add("hidden");
-    page2.classList.remove("hidden");
-    if (navigator.vibrate) navigator.vibrate(200);
-  };
+yesBtn.onclick = () => {
+  page1.classList.add("hidden");
+  page2.classList.remove("hidden");
+  bgm.play();
+  if(navigator.vibrate) navigator.vibrate(200);
+};
 </script>
 
 </body>
