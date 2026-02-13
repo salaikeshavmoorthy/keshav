@@ -3,130 +3,135 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>For You ❤️</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<title>For My Valentine 💖</title>
 
 <style>
 body {
   margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
   height: 100vh;
-  font-family: 'Playfair Display', serif;
-  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.card {
-  background: white;
-  padding: 40px;
-  border-radius: 18px;
-  width: 90%;
-  max-width: 420px;
+.container {
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  animation: fadeIn 1.2s ease;
+  padding: 20px;
 }
 
 h1 {
-  font-size: 1.9rem;
-  color: #333;
+  color: #b30059;
 }
 
 button {
-  margin-top: 30px;
-  padding: 14px 40px;
+  padding: 15px 30px;
+  font-size: 18px;
   border-radius: 30px;
   border: none;
-  font-size: 1.1rem;
-  background: #ff4d6d;
-  color: white;
   cursor: pointer;
 }
 
-button:hover {
-  transform: scale(1.05);
+#yesBtn {
+  background-color: #ff4d6d;
+  color: white;
+  margin-right: 15px;
+}
+
+#noBtn {
+  background-color: #999;
+  color: white;
+  position: absolute;
+}
+
+.hidden {
+  display: none;
 }
 
 .letter {
-  display: none;
-  animation: fadeIn 1.5s ease;
+  max-width: 600px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .letter h2 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
   color: #ff4d6d;
 }
 
 .letter p {
-  font-size: 1rem;
-  color: #444;
-  line-height: 1.7;
-  text-align: left;
-  margin-top: 20px;
-}
-
-.signature {
-  margin-top: 30px;
-  text-align: right;
-  font-family: 'Great Vibes', cursive;
-  font-size: 1.8rem;
-  color: #ff4d6d;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card" id="page1">
-  <h1>Will you be my Valentine? ❤️</h1>
-  <button onclick="showLetter()">Yes</button>
+<!-- PAGE 1 -->
+<div class="container" id="page1">
+  <h1>Salai Adhithai 💖</h1>
+  <h2>Will you be my Valentine? 🥹</h2>
+  <br/><br/>
+  <button id="yesBtn">YES 💘</button>
+  <button id="noBtn">NO 😢</button>
 </div>
 
-<div class="card letter" id="page2">
-  <h2>My Dearest Salai Adhithai ❤️</h2>
-
-  <p>
-    From the moment you came into my life, everything quietly changed.
-    Your smile feels like comfort, your presence feels like home,
-    and somehow, even the simplest moments feel special with you.
-  </p>
-
-  <p>
-    You may not know this, but every time I think of you,
-    I smile without realizing it.  
-    My <b>Gundu</b>, my little <b>Thakkali</b> 🍅 —
-    you are my calm in chaos and my happiness in silence.
-  </p>
-
-  <p>
-    I don’t promise perfection.  
-    But I promise honesty, laughter, support,
-    and a hand that never lets go — in good days and bad.
-  </p>
-
-  <p>
-    This is not just a Valentine question.  
-    It’s me choosing you — today, tomorrow, and always.
-  </p>
-
-  <div class="signature">
-    Yours,<br/>Keshav ❤️
+<!-- PAGE 2 -->
+<div class="container hidden" id="page2">
+  <div class="letter">
+    <h2>My Gundu ❤️ (aka Thakkali 🍅)</h2>
+    <p>
+      From the day you came into my life, everything felt warmer, calmer, and more beautiful.
+      You are my comfort, my laughter, my peace, and my chaos — all wrapped in love.
+    </p>
+    <p>
+      When I call you Gundu or Thakkali, it’s not just a name — it’s affection, closeness,
+      and a thousand emotions I can’t put into words.
+    </p>
+    <p>
+      I don’t promise perfection, but I promise effort, honesty, care,
+      and a heart that chooses you every single day.
+    </p>
+    <p>
+      Thank you for being you.  
+      Thank you for choosing me.  
+      I love you, today and always. 💖
+    </p>
+    <p style="text-align:right;"><strong>— Yours, Keshav</strong></p>
   </div>
 </div>
 
 <script>
-function showLetter() {
-  document.getElementById("page1").style.display = "none";
-  document.getElementById("page2").style.display = "block";
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const page1 = document.getElementById("page1");
+const page2 = document.getElementById("page2");
+
+function moveNoButton() {
+  const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+  const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+  noBtn.style.left = `${x}px`;
+  noBtn.style.top = `${y}px`;
 }
+
+// DESKTOP
+noBtn.addEventListener("mouseover", moveNoButton);
+
+// MOBILE
+noBtn.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  moveNoButton();
+});
+
+// YES BUTTON
+yesBtn.addEventListener("click", () => {
+  page1.classList.add("hidden");
+  page2.classList.remove("hidden");
+});
 </script>
 
 </body>
