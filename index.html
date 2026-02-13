@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 350px;
+    }
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 10px;
+    }
+    img {
+      width: 180px;
+      border-radius: 12px;
+    }
+    .buttons {
+      margin-top: 20px;
+      position: relative;
+      height: 60px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      position: absolute;
+    }
+    #yes {
+      background: #ff4d6d;
+      color: white;
+      left: 20%;
+    }
+    #no {
+      background: #ccc;
+      right: 20%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Will you be my Valentine? 💕</h1>
+  <img id="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2t5dDduY3Z6ZXZnbHlyZTh0cGZ4bHgycW50eGxqb2s4b3BqNnR5NCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MDJ9IbxxvDUQM/giphy.gif">
+  <div class="buttons">
+    <button id="yes" onclick="yesClicked()">Yes ❤️</button>
+    <button id="no" onmouseover="moveNo()">No 💔</button>
+  </div>
+</div>
+
+<script>
+  function moveNo() {
+    const btn = document.getElementById('no');
+    btn.style.left = Math.random() * 70 + "%";
+    btn.style.top = Math.random() * 40 + "px";
+  }
+
+  function yesClicked() {
+    document.querySelector('h1').innerText = "YAY!!! I knew it 😍💖";
+    document.getElementById('gif').src =
+      "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHk0NmlqZ2U2ZWVwZWlta2l3NnM1eG1nY2FrcDR1Z2d5bXlndmR0ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l0MYt5jPR6QX5pnqM/giphy.gif";
+    document.querySelector('.buttons').style.display = "none";
+  }
+</script>
+
+</body>
+</html>
